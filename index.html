@@ -32,5 +32,25 @@
         </button>
         
     </div>
+    <audio id="but-a-just-onee-ohhflower" autoplay muted loop>
+        <source src="but-a-just-onee-ohhflower.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="TombolSuara">Aktifkan Suara</button>
+    <script>
+        const audio = document.getElementById('but-a-just-onee-ohhflower.mp3');
+        const tombol = document.getElementById('TombolSuara');
+
+        tombol.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                tombol.textContent = 'Nonaktifkan Suara';
+            } else {
+                audio.muted = false;
+                tombol.textContent = 'Aktifkan Suara';
+            }
+        });
+    </script>
+    </script>
 </body>
 </html>
