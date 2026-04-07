@@ -34,19 +34,22 @@
         <source src="but-a-just-onee-ohhflower.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="TombolSuara">Aktifkan Suara</button>
+    <button id="TombolSuara">Putar Musik</button>
         
     <script>
         const audio = document.getElementById('but-a-just-onee-ohhflower.mp3');
-        const tombol = document.getElementById('TombolSuara');
+        const tombol = document.getElementById('Putar Musik');
+      let isPlaying = false;
 
         tombol.addEventListener('click', () => {
-            if (audio.muted) {
-                audio.muted = false;
-                tombol.textContent = 'Nonaktifkan Suara';
+            if (!isPlaying) {
+                audio.play().catch(e => console.error("Gagal Memutar:", e));
+                tombol.textContent = 'Nonaktifkan Musik';
+              isPlaying= true:
             } else {
-                audio.muted = true;
-                tombol.textContent = 'Aktifkan Suara';
+                audio.pause();
+                tombol.textContent = 'Aktifkan Musik';
+              isPlaying = true
             }
         });
     </script>
